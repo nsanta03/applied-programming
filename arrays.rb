@@ -6,8 +6,13 @@ suits = ["Clubs", "Diamonds", "Hearts", "Spades"]
 # puts "#{ranks[2]} of #{suits[0]}"
 # etc, etc, etc
 
-# for rank in ranks
-#   for suit in suits
-#     puts "#{rank} of #{suit}"
-#   end
-# end
+deck=[]
+
+for rank in ranks
+   for suit in suits
+     deck << "#{rank} of #{suit}"
+   end
+end
+
+puts deck.shuffle[0, 5].inspect
+

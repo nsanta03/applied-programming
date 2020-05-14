@@ -5,7 +5,7 @@ forecast = HTTParty.get(url).parsed_response.to_hash
 
 # pp = pretty print
 # use instead of `puts` to make reading a hash a lot easier
-# pp forecast
+#pp forecast
 
 # Example output:
 #
@@ -24,3 +24,4 @@ puts "Extended forecast:"
 for day in forecast["daily"]
   puts "A high of #{day["temp"]["max"]} and #{day["weather"][0]["main"]}"
 end
+

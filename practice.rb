@@ -29,6 +29,27 @@ jeffs_balance = 0
 
 # fill the balances
 
+#receive money to account
+for transaction in blockchain
+    if transaction[:to_user]=="brian"
+        brians_balance=brians_balance+transaction[:amount]
+    elsif transaction[:to_user]=="ben"
+        bens_balance=bens_balance+transaction[:amount]
+    elsif transaction[:to_user]=="jeff"
+        jeffs_balance=jeffs_balance+transaction[:amount]
+    end    
+
+#send money out of account
+    if transaction[:from_user]=="brian"
+        brians_balance=brians_balance-transaction[:amount]
+    elsif transaction[:from_user]=="ben"
+        bens_balance=bens_balance-transaction[:amount]
+    elsif transaction[:from_user]=="jeff"
+        jeffs_balance=jeffs_balance-transaction[:amount]
+    end    
+end    
+
+
 puts "Brian's KelloggCoin balance is #{brians_balance}"
 puts "Ben's KelloggCoin balance is #{bens_balance}"
 puts "Jeff's KelloggCoin balance is #{jeffs_balance}"
