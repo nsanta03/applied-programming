@@ -26,14 +26,16 @@
       <h1>KIEI-451 Casino!</h1>
 
       <div class="row">
-        <%# Remove the hard-coding and have this come from a "deck" of cards %>
-        <div class="col-sm-3"><img class="img-fluid" src="/images/cards/queen_of_hearts.png"></div>
-        <div class="col-sm-3"><img class="img-fluid" src="/images/cards/queen_of_diamonds.png"></div>
-        <div class="col-sm-3"><img class="img-fluid" src="/images/cards/queen_of_clubs.png"></div>
-        <div class="col-sm-3"><img class="img-fluid" src="/images/cards/queen_of_spades.png"></div>
+      <h2> 
+        <% for card in @hand %>
+            <img src="/images/cards/<%= card %>.png">
+        <% end %>
+      </h2> 
       </div>
 
-      <%# Add a "deal again" button %>
+      <p>
+        <a href="/" class="btn btn-success">Deal Again</a>
+      </p>
     </div>
 
     <!-- Optional JavaScript -->
